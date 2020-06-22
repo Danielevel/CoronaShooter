@@ -6,6 +6,7 @@ public class EnemyAi : MonoBehaviour
 {
     public Transform target;
     public Transform myTransform;
+    //private bool VidaE;
     [Range (0, 5)] public float VelocityValue;
     // Start is called before the first frame update
     void Start()
@@ -18,5 +19,9 @@ public class EnemyAi : MonoBehaviour
     {
           transform.LookAt(target);
           transform.Translate(Vector3.forward*VelocityValue*Time.deltaTime);
+
+          //if(VidaE == false){
+            //  myTransform = false;
+          //}
     }
 }
