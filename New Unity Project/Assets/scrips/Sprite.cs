@@ -10,7 +10,7 @@ public class Sprite : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        target = GameObject.Find("Main_Camera").transform;
+        target = GameObject.Find("MainCamera").transform;
     }
 
     // Update is called once per frame
