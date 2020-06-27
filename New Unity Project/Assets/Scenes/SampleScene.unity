@@ -316,8 +316,8 @@ MonoBehaviour:
   tcpY: 0
   tcpX2: 0
   tcpY2: 0
-  Derecha: {fileID: 0}
-  Izquierda: {fileID: 0}
+  Derecha: {fileID: 1158161730}
+  Izquierda: {fileID: 1442046061}
 --- !u!1 &187601046
 GameObject:
   m_ObjectHideFlags: 0
@@ -1992,6 +1992,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cb73f66a1e20940a66ebf660563c78, type: 3}
+--- !u!1 &1158161730 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: 6dce79b39a70f7543832bab6f5f71042, type: 3}
+  m_PrefabInstance: {fileID: 1203760802}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1182290241
 GameObject:
   m_ObjectHideFlags: 0
@@ -2604,6 +2609,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342dcde07b7e91c478e7a53862a78976, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1442046061 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: f4825cf8491287044b3b8c53d07b0697, type: 3}
+  m_PrefabInstance: {fileID: 1332828774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1453462755
 PrefabInstance:
   m_ObjectHideFlags: 0
