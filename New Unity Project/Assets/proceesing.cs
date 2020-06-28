@@ -19,8 +19,8 @@ public class proceesing : MonoBehaviour
     public int tcpX2 = 0;
     public int tcpY2 = 0;
 
-    public GameObject ESCUDO;
-    public GameObject ESPADA;
+    public GameObject Derecha;
+    public GameObject Izquierda;
 
     void Start()
     {
@@ -29,13 +29,12 @@ public class proceesing : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(-0.12, 1.19, 1.73);
-        transform2.position = new Vector3(4.75, -1.31, 0.64);
+        transform.position = new Vector3(0, 0, 0);
 
         leerDatosProcessing();
 
-        ESCUDO.transform.position = new Vector3(tcpX/2, tcpY/2, 0);
-        ESPADA.transform2.position = new Vector3(tcpX2/2, tcpY2/2, 0);
+        Derecha.transform.position = new Vector3(tcpX, tcpY, 0);
+        Izquierda.transform.position = new Vector3(tcpX2, tcpY2, 0);
     }
 
     /**
