@@ -14,10 +14,11 @@ public class proceesing : MonoBehaviour
     String Host = "localhost";
     Int32 Port = 5204;
 
-    public int tcpX = 0;
-    public int tcpY = 0;
-    public int tcpX2 = 0;
-    public int tcpY2 = 0;
+    public GameObject Player;
+    public float tcpX = 0;
+    public float tcpY = 0;
+    public float tcpX2 = 0;
+    public float tcpY2 = 0;
 
     public GameObject Derecha;
     public GameObject Izquierda;
@@ -29,12 +30,12 @@ public class proceesing : MonoBehaviour
 
     void Update()
     {
-        transform.position = new Vector3(0, 0, 0);
+        transform.localPosition = new Vector3(0, 0, 0);
 
         leerDatosProcessing();
 
-        Derecha.transform.position = new Vector3(tcpX, tcpY, 0);
-        Izquierda.transform.position = new Vector3(tcpX2, tcpY2, 0);
+        Derecha.transform.localPosition = new Vector3(tcpX, tcpY,(float) 0.74);
+        Izquierda.transform.localPosition = new Vector3(tcpX2, tcpY2, (float)0.74);
     }
 
     /**
@@ -59,10 +60,10 @@ public class proceesing : MonoBehaviour
             StringSplitOptions.None
             );
             Debug.Log("X=" + partes[0] + " Y=" + partes[1]);
-            tcpX = Int32.Parse(partes[0]);
-            tcpY = Int32.Parse(partes[1]);
-            tcpX2 = Int32.Parse(partes[2]);
-            tcpY2 = Int32.Parse(partes[3]);
+            tcpX = (float)(Int32.Parse(partes[0])/150.000);
+            tcpY = (float)(Int32.Parse(partes[1])/150.000);
+            tcpX2 = (float)(Int32.Parse(partes[2])/150.000);
+            tcpY2 = (float)(Int32.Parse(partes[3])/150.000);
         }
     }
 
