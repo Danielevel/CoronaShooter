@@ -17,10 +17,7 @@ public class proceesing : MonoBehaviour
     public GameObject Player;
     public float tcpX = 0;
     public float tcpY = 0;
-    public float tcpX2 = 0;
-    public float tcpY2 = 0;
 
-    public GameObject ESCUDO;
     public GameObject ESPADA;
 
     void Start()
@@ -34,8 +31,7 @@ public class proceesing : MonoBehaviour
 
         leerDatosProcessing();
 
-        ESCUDO.transform.localPosition = new Vector3(tcpX, tcpY,(float) 0.74);
-        ESPADA.transform.localPosition = new Vector3(tcpX2, tcpY2, (float)0.74);
+        ESPADA.transform.localPosition = new Vector3(tcpX, tcpY, (float)0.74);
     }
 
     /**
@@ -62,8 +58,6 @@ public class proceesing : MonoBehaviour
             Debug.Log("X=" + partes[0] + " Y=" + partes[1]);
             tcpX = (float)(Int32.Parse(partes[0])/150.000);
             tcpY = (float)(Int32.Parse(partes[1])/150.000);
-            tcpX2 = (float)(Int32.Parse(partes[2])/150.000);
-            tcpY2 = (float)(Int32.Parse(partes[3])/150.000);
         }
     }
 

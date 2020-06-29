@@ -9,11 +9,7 @@ Server servidor;
 String datosPosiciones = "";//Guarda la informacion que se enviara por el puerto.
 
 // Instancio la variable del color que se va a buscar
-color marcadorA;
 color marcadorB;
-
-int xMarcadorA = 0;
-int yMarcadorA = 0;
 
 int xMarcadorB = 0;
 int yMarcadorB = 0;
@@ -42,7 +38,6 @@ camara = new Capture(this, width, height, 30);
 camara.start();
 
 // Marcadores
-marcadorA = color(83, 139, 79); // Color mano derecha Cl
 marcadorB = color(46, 55, 129); // Color mano izquierda BL
 }
 
@@ -55,13 +50,9 @@ camara.read();
 image(camara, 0, 0);
 camara.loadPixels();
 
-float promedioXMarcadorA = 0;
-float promedioYMarcadorA = 0;
-
 float promedioXMarcadorB = 0;
 float promedioYMarcadorB = 0;
 
-int cantidadPixelesCoincidenConMarcadorA = 0;
 int cantidadPixelesCoincidenConMarcadorB = 0;
 
 //empieza a recorrer cada pixel
@@ -75,21 +66,6 @@ color pixelActual = camara.pixels[x + y * camara.width];
 float cantidadRojoDelPixelActual = red(pixelActual);
 float cantidadVerdeDelPixelActual = green(pixelActual);
 float cantidadAzulDelPixelActual = blue(pixelActual);
-
-float cantidadRojoDelMarcadorA = red(marcadorA);
-float cantidadVerdeDelMarcadorA = green(marcadorA);
-float cantidadAzulDelMarcadorA = blue(marcadorA);
-
-// Calculando la distancia de similitud en "color" para el marcador A.
-float similitudEnDistanciaDelColorMarcadorA = dist(cantidadRojoDelPixelActual, cantidadVerdeDelPixelActual, cantidadAzulDelPixelActual, cantidadRojoDelMarcadorA, cantidadVerdeDelMarcadorA, cantidadAzulDelMarcadorA); // We are using the dist( ) function to compare the current color with the color we are tracking.
-
-// Esta muy cerca del rojo
-if (similitudEnDistanciaDelColorMarcadorA < semejanzaEnColor)
-{
-promedioXMarcadorA += x;
-promedioYMarcadorA += y;
-cantidadPixelesCoincidenConMarcadorA++;
-} else {
 
 float cantidadRojoDelMarcadorB = red(marcadorB);
 float cantidadVerdeDelMarcadorB = green(marcadorB);
@@ -107,13 +83,6 @@ cantidadPixelesCoincidenConMarcadorB++;
 
 }
 }
-}
-
-if ( cantidadPixelesCoincidenConMarcadorA > minimoDePixelesSemejantes )
-{
-xMarcadorA = (int) promedioXMarcadorA / cantidadPixelesCoincidenConMarcadorA;
-yMarcadorA = (int) promedioYMarcadorA / cantidadPixelesCoincidenConMarcadorA;
-}
 
 if ( cantidadPixelesCoincidenConMarcadorB > minimoDePixelesSemejantes )
 {
@@ -121,11 +90,10 @@ xMarcadorB = (int) promedioXMarcadorB / cantidadPixelesCoincidenConMarcadorB;
 yMarcadorB = (int) promedioYMarcadorB / cantidadPixelesCoincidenConMarcadorB;
 }
 
-dibujarCentroide(marcadorA, xMarcadorA, yMarcadorA);
 dibujarCentroide(marcadorB, xMarcadorB, yMarcadorB);
 
-if (xMarcadorA > 0 || yMarcadorA > 0 || xMarcadorB > 0 || yMarcadorB > 0) {
-datosPosiciones = (width-xMarcadorA)+","+(height-yMarcadorA)+","+(width-xMarcadorB)+","+(height-yMarcadorB)+"\n";
+if ( xMarcadorB > 0 || yMarcadorB > 0) {
+datosPosiciones = (width-xMarcadorB)+","+(height-yMarcadorB)+"\n";
 } else {
 datosPosiciones = "0,0,0,0\n";
 }
