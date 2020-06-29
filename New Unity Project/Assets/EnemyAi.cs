@@ -12,7 +12,7 @@ public class EnemyAi : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tarj = GameObject.Find("Jugador/MainCamera");
+        tarj = GameObject.Find("MainCamera");
         target = tarj.GetComponent<Transform>();
     }
 
