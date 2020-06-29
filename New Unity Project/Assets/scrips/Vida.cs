@@ -12,7 +12,9 @@ public class Vida : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if( valor == 0){
+            gameObject.SetActive(false);
+        }
 	}
 
     public void RecibirDaño(float daño)
@@ -23,4 +25,13 @@ public class Vida : MonoBehaviour {
             valor = 0;
         }
     }
+	void OnCollisionEnter(Collision collision)
+	{
+        if (collision.transform.tag == "Disparo")
+		{
+            valor = 0;
+        }
+
+    }
+
 }

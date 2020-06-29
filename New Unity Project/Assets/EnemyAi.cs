@@ -5,13 +5,15 @@ using UnityEngine;
 public class EnemyAi : MonoBehaviour
 {
     public Transform target;
+    public GameObject tarj;
     public Transform myTransform;
     //private bool VidaE;
     [Range (0, 5)] public float VelocityValue;
     // Start is called before the first frame update
     void Start()
     {
-        
+        tarj = GameObject.Find("Jugador/MainCamera");
+        target = tarj.GetComponent<Transform>();
     }
 
     // Update is called once per frame

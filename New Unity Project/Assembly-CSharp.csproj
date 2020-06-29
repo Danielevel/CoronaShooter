@@ -83,7 +83,6 @@
      <Compile Include="Assets\scrips\FirstPersonCamera.cs" />
      <Compile Include="Assets\scrips\GeneradorDeEnemigos.cs" />
      <Compile Include="Assets\scrips\LogicaArma.cs" />
-     <Compile Include="Assets\scrips\LogicaEnemigo.cs" />
      <Compile Include="Assets\scrips\LogicaJugador.cs" />
      <Compile Include="Assets\scrips\MouseConfig.cs" />
      <Compile Include="Assets\scrips\PlayerController.cs" />
