@@ -20,8 +20,8 @@ public class proceesing : MonoBehaviour
     public float tcpX2 = 0;
     public float tcpY2 = 0;
 
-    public GameObject Derecha;
-    public GameObject Izquierda;
+    public GameObject ESCUDO;
+    public GameObject ESPADA;
 
     void Start()
     {
@@ -34,8 +34,8 @@ public class proceesing : MonoBehaviour
 
         leerDatosProcessing();
 
-        Derecha.transform.localPosition = new Vector3(tcpX, tcpY,(float) 0.74);
-        Izquierda.transform.localPosition = new Vector3(tcpX2, tcpY2, (float)0.74);
+        ESCUDO.transform.localPosition = new Vector3(tcpX, tcpY,(float) 0.74);
+        ESPADA.transform.localPosition = new Vector3(tcpX2, tcpY2, (float)0.74);
     }
 
     /**
