@@ -66,10 +66,13 @@
      <Compile Include="Assets\scrips\LogicaArma.cs" />
      <Compile Include="Assets\scrips\LogicaJugador.cs" />
      <Compile Include="Assets\scrips\MouseConfig.cs" />
+     <Compile Include="Assets\scrips\PauseMenuD.cs" />
      <Compile Include="Assets\scrips\PlayerController.cs" />
      <Compile Include="Assets\scrips\Punteria.cs" />
      <Compile Include="Assets\scrips\Sprite.cs" />
+     <Compile Include="Assets\scrips\TimeController.cs" />
      <Compile Include="Assets\scrips\Vida.cs" />
+     <Compile Include="Assets\scrips\VidaJugador.cs" />
      <None Include="Assets\Easy Weapons\Readme.txt" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="UnityEngine">

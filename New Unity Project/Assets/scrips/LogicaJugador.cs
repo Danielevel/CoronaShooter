@@ -4,13 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class LogicaJugador : MonoBehaviour {
-    public Vida vida;
-    public bool Vida0 = false;
+    public VidaJugador VidaJugador;
+    public GameObject GameOver; 
+    public bool VidaJugador0 = false;
     [SerializeField] private Animator animadorPerder;
 
 	// Use this for initialization
 	void Start () {
-        vida = GetComponent<Vida>();
+        VidaJugador = GetComponent<VidaJugador>();
 	}
 	
 	// Update is called once per frame
@@ -20,11 +21,12 @@ public class LogicaJugador : MonoBehaviour {
 
     void RevisarVida()
     {
-        if (Vida0) return;
-        if(vida.valor <= 0)
+        if (VidaJugador0) return;
+        if(VidaJugador.valor <= 0)
         {
-            Vida0 = true;
-            Invoke("ReiniciarJuego", 2f);
+            GameOver.SetActive(true);
+            VidaJugador0 = true;
+            Invoke("ReiniciarJuego", 5f * Time.unscaledDeltaTime);
         }
     }
 
