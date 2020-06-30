@@ -17,6 +17,7 @@ public class proceesing : MonoBehaviour
     public GameObject Player;
     public float tcpX = 0;
     public float tcpY = 0;
+    public double rango;
 
     public GameObject ESPADA;
 
@@ -56,8 +57,8 @@ public class proceesing : MonoBehaviour
             StringSplitOptions.None
             );
             Debug.Log("X=" + partes[0] + " Y=" + partes[1]);
-            tcpX = (float)(Int32.Parse(partes[0])/150.000);
-            tcpY = (float)(Int32.Parse(partes[1])/150.000);
+            tcpX = (float)(Int32.Parse(partes[0])/rango);
+            tcpY = (float)(Int32.Parse(partes[1])/rango);
         }
     }
 
