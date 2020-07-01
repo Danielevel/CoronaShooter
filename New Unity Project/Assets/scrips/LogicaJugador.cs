@@ -17,6 +17,11 @@ public class LogicaJugador : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         RevisarVida();
+
+        GameObject theBar = GameObject.Find ("Canvas/HPFondo/HPBar");
+          var theBarRectTransform = theBar.transform as RectTransform;
+          theBarRectTransform.sizeDelta = new Vector2 (VidaJugador.valor, theBarRectTransform.sizeDelta.y);
+
 	}
 
     void RevisarVida()
@@ -26,7 +31,10 @@ public class LogicaJugador : MonoBehaviour {
         {
             GameOver.SetActive(true);
             VidaJugador0 = true;
-            Invoke("ReiniciarJuego", 5f * Time.unscaledDeltaTime);
+            Time.timeScale = 0f;
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
+            //Invoke("ReiniciarJuego", 5f * Time.unscaledDeltaTime);
         }
     }
 

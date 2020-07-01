@@ -5,6 +5,7 @@ using UnityEngine;
 public class VidaJugador : MonoBehaviour
 {
     public float valor = 100;
+    private float vidaTotal = 100;
 
 	// Use this for initialization
 	void Start () {
@@ -31,9 +32,9 @@ public class VidaJugador : MonoBehaviour
     }
 	void OnCollisionEnter(Collision collision)
 	{
-        if (collision.transform.tag == "Disparo")
+        if (collision.transform.tag == "Enemy")
 		{
-            valor = 0;
+            valor = valor-(vidaTotal/5);
         }
 
     }

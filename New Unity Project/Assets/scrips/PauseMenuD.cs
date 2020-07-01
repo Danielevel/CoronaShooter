@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PauseMenuD : MonoBehaviour
 {
@@ -38,5 +39,19 @@ public class PauseMenuD : MonoBehaviour
         Time.timeScale = 0f;
         GameIsPaused = true;
         
+    }
+    public void LoadMenu()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        Time.timeScale = 1f;
+        pauseMenuUI.SetActive(false);
+        GameIsPaused = false;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+    }
+    public void cerrarJuego()
+    {
+        Application.Quit();
+        Debug.Log("Se precionó el botón cerrar");
     }
 }
