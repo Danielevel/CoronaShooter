@@ -4,16 +4,24 @@ using UnityEngine;
 
 public class Vida : MonoBehaviour {
     public float valor = 100;
+    public ScoreCount MyScoreCount;
+    public GameObject ScoreContiner;
+    public int SumaPunto = 1;
 
 	// Use this for initialization
 	void Start () {
-		
+		//MyScoreCount = GetComponent<ScoreCount>();
+        ScoreContiner = GameObject.FindWithTag("Numbers");
+        MyScoreCount = ScoreContiner.GetComponent<ScoreCount>();
+        //ScoreContiner.GetComponent<MyScoreCount>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if( valor == 0){
             gameObject.SetActive(false);
+            //MyScoreCount = GetComponent<ScoreCount>();
+            //MyScoreCount = GameObject.Find("Canvas/ScoreText").GetComponent("ScoreCount");
         }
 	}
 
@@ -29,6 +37,7 @@ public class Vida : MonoBehaviour {
 	{
         if (collision.transform.tag == "Disparo")
 		{
+            MyScoreCount.Points++;
             valor = 0;
         }
 
